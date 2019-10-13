@@ -1,4 +1,4 @@
-<?php 
+<?php  
 	foreach ($_GET as $key => $value) {
 		if ($_GET[$key]=="") {
 			header('Location: 3.1.php');
@@ -46,11 +46,7 @@
  				echo $_GET['mail'];
  			 ?>
  		</li>
- 		<li>Địa chỉ: 
- 			<?php 
- 				echo $_GET['dress'];
- 			 ?>
- 		</li>
+ 	
  	</ul>
  </body>
  </html>

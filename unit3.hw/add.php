@@ -23,13 +23,30 @@
                 <input type="text" class="form-control" id="" placeholder="Nhập vào mã sinh viên" name="id">
             </div>  
 
-          
+            <div class="form-group">
+                <label for="">Lớp</label>
+                <input type="text" class="form-control" id="" placeholder="Nhập vào lớp" name="clas">
+            </div>
+        
+            <div class="form-group">
+                <label for="">Trường</label>
+                <input type="text" class="form-control" id="" placeholder="Nhập vào Trường" name="sch">
+            </div>
+            <div class="form-group">
+                <label for="">Số điện thoại</label>
+                <input type="nbp" class="form-control" id="" placeholder="Nhập vào số điện thoại" name="nbp">
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="text" class="form-control" id="" placeholder="Nhập vào email" name="mail">
+            </div>
              <?php
                 if(isset($_COOKIE['msg']))echo $_COOKIE['msg'];
-
-            ?>
+             ?>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
+
+        <form action="list.php" method="GET" role="form"> <button  type="submit" class="btn btn-primary">candle add</button></form>
     </div>
 </body>
 </html>

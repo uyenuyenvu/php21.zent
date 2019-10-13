@@ -10,7 +10,8 @@
 						'final'=>6,
 				)
 		);
-
+		$info[]="uyen";
+		$info[]="tuan";
 		echo "<pre>";
 				print_r($info);
 		echo "</pre>";
