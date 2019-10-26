@@ -14,6 +14,13 @@
 	// print_r($cate);
 	// echo "</pre>";
 	// echo "<br>".$cate['name'];
+      $categories = array();
+        $query1 = "SELECT * FROM categories where parent_id is null";
+        $result1 = $conn->query($query1);
+
+        while($row = $result1->fetch_assoc()) { 
+            $categories[] = $row;
+        } 
 
 
  ?>
@@ -21,7 +28,7 @@
  <html lang="en">
  <head>
  	<meta charset="UTF-8">
- 	<title>edit</title>
+ 	<title>edit</title> 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
@@ -45,11 +52,20 @@
             </div>
             <div class="form-group">
                 <label for="">thumbnail</label>
-                <input type="text" class="form-control" id="" placeholder="" name="thumbnail"  value=" <?php echo($cate['thumbnail']) ?> " >
+                <img src="img/<?= $cate['thumbnail'] ?>" width="200px" height="200px">
+                <input type="file" class="form-control" id="thumbnail" placeholder="" name="thumbnail"  value=" <?php echo($cate['thumbnail']) ?> " >
+         <!--        <input type="submit" value="Upload Image" name="submit"> -->
             </div>
-            <div class="form-group">
+           <div class="form-group">
                 <label for="">parent_id</label>
-                <input type="text" class="form-control" id="" placeholder="" name="parent_id"  value=" <?php echo($cate['parent_id']) ?> " >
+                <select  class="form-control" name='parent_id'>
+
+                    <option name="" id="" value="0" >moi chon danh muc cha</option>
+                    <?php foreach ($categories as $key) {
+                     ?>
+                    <option <?php if($cate['parent_id']==$key['id']) echo "selected"; ?> value='<?= $key['id']?>' ><?= $key['name']?></option>
+                <?php } ?>
+                </select>
             </div>
             <div class="form-group">
                 <label for="">slug</label>
@@ -59,7 +75,7 @@
                 <label for="">description</label>
                 <input type="text" class="form-control" id="" placeholder="" name="description"  value=" <?php echo($cate['description']) ?> " >
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary" name="submit">Update</button>
         </form>
     </div>
  </body>

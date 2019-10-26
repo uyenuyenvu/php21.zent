@@ -45,17 +45,18 @@
             </div>
             <div class="form-group">
                 <label for="">avatar </label>
-                <input type="text" class="form-control" id="" placeholder="" name="avatar"  value=" <?php echo($cate['avatar']) ?> " >
+                <img src="<?= $cate['avatar'] ?>" width="200px" height="200px">
+                <input type="file" class="form-control" id="avatar" placeholder="" name="avatar"  value=" <?php echo($cate['avatar']) ?> " >
             </div>
             <div class="form-group">
                 <label for="">password</label>
-                <input type="text" class="form-control" id="" placeholder="" name="email"  value=" <?php echo($cate['email']) ?> " >
+                <input type="text" class="form-control" id="" placeholder="" name="password"  value=" <?php echo($cate['email']) ?> " >
             </div>
             <div class="form-group">
                 <label for="">email</label>
                 <input type="text" class="form-control" id="" placeholder="" name="email"  value=" <?php echo($cate['email']) ?> " >
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">update</button>
         </form>
     </div>
  </body>

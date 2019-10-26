@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
     <meta charset="utf-8">
@@ -26,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label for="">avatar</label>
-                <input type="text" class="form-control" id="" placeholder="" name="avatar">
+                <input type="file" class="form-control" id="avatar" placeholder="" name="avatar">
             </div>
              <div class="form-group">
                 <label for="">email</label>

@@ -2,14 +2,31 @@
 
     include('conection.php');
 
-        $categories = array();
-        $query = "SELECT * FROM categories where parent_id is null and deleted_at is null";
+        $posts = array();
+        $query = "SELECT * FROM posts where deleted_at is null";
         $result = $conn->query($query);
 
         while($row = $result->fetch_assoc()) { 
-            $categories[] = $row;
+            $posts[] = $row;
         }
 
+
+
+        $user = array();
+        $query = "SELECT * FROM users where deleted_at is null";
+        $result = $conn->query($query);
+
+        while($row = $result->fetch_assoc()) { 
+            $user[] = $row;
+        }
+
+         $cate = array();
+        $query = "SELECT * FROM categories where deleted_at is null";
+        $result = $conn->query($query);
+
+        while($row = $result->fetch_assoc()) { 
+            $cate[] = $row;
+        }
      
 
      ?>
@@ -31,13 +48,13 @@
 <body>
     <div class="container">
     <h3 align="center">DevMind - Education And Technology Group</h3>
-    <h3 align="center">Add New Category</h3>
+    <h3 align="center">Add New Post</h3>
     <a href="index.php" class="btn btn-success"><< Back to home</a>
     <hr> 
-        <form action="category_add_process.php" method="POST" role="form" enctype="multipart/form-data">
+        <form action="post_add_process.php" method="POST" role="form" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" id="" placeholder="" name="name">
+                <input type="text" class="form-control" id="" placeholder="" name="title">
             </div>
             <div class="form-group">
                 <label for="">thumbnail</label>
@@ -45,11 +62,27 @@
                 
             </div>
              <div class="form-group">
-                <label for="">parent_id</label>
-                <select  class="form-control" name="parent_id">
+                <label for="">content</label>
+                <textarea type="text" class="form-control" rows="7" placeholder="" name="content"></textarea> 
+                
+            </div>
+             <div class="form-group">
+                <label for="">Author</label>
+                <select  class="form-control" name="user_id">
 
-                    <option name="" id="" value="0" >moi chon danh muc cha</option>
-                    <?php foreach ($categories as $key) {
+                    <option name="" id="" value="0" >moi chon tac gia</option>
+                    <?php foreach ($user as $key) {
+                     ?>
+                    <option name="" id="" value='<?= $key['id']?>' ><?= $key['name']?></option>
+                <?php } ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">category</label>
+                <select  class="form-control" name="category_id">
+
+                    <option name="" id="" value="0" >moi chon danh muc</option>
+                    <?php foreach ($cate as $key) {
                      ?>
                     <option name="" id="" value='<?= $key['id']?>' ><?= $key['name']?></option>
                 <?php } ?>
