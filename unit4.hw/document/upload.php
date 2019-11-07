@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+
 	if (isset($_POST['submit'])) {
 		$target_dir="download/";
 		$target_file=$target_dir.basename($_FILES["doc"]['name']);
@@ -10,7 +11,9 @@
 				'nameFile'=>$_FILES['doc']['name'],
 				
 			);
-			$_SESSION['soFile'] ++;
+			if ($_SESSION['soFile']) {
+				$_SESSION['soFile'] ++;
+			}
 			
 		}else{
 			echo "fail";

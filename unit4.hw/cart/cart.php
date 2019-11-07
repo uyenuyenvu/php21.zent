@@ -2,7 +2,10 @@
 	session_start();
 
  ?>
- <!DOCTYPE html>
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -52,6 +55,13 @@
 		 <tr>
 		 	<td colspan="4">Tổng số tiền của giỏ hàng: </td>
 		 	<td colspan="2"><?= number_format($sum) ?></td>
+		 </tr>
+		 <?php 
+		 		include('chuyenTien.php');
+		  ?>
+		  <tr>
+		 	<td colspan="4">Tổng số tiền của giỏ hàng: </td>
+		 	<td colspan="2"><?= convert_number_to_words($sum) ?></td>
 		 </tr>
 		<?php } ?>
 	</table>

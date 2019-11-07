@@ -1,16 +1,29 @@
 <?php 
 	if (isset($_POST['submit'])) {
 		$target_dir="upload/";
-		$target_file=$target_dir.basename($_FILES["img"]['name']);
+		//uploads/111111
+		$file_infor = pathinfo($_FILES['img']['name']);
+		$target_file=$target_dir.time().'.'.$file_infor['extension'];
+		//uploads/111111.png
 		if (move_uploaded_file($_FILES['img']['tmp_name'], $target_file)) {
-			echo "ok ".basename($_FILES['img']['name'])." upload";
+			echo "upload  ".$target_file." thanh congggg";
 		}else{
 			echo "fail";
 		}
+		//
+		// echo'<pre>';
+		// 	print_r());
+		// echo"</pre>";
+		// pathinfo($_FILES['img']['name'])['filename']=pathinfo($_FILES['img']['name'])['filename'].time();
+		// echo pathinfo($_FILES['img']['name'])['filename'].time();
+		// pathinfo(basename($_FILES['img']['name']))['filename']=pathinfo(basename($_FILES['img']['name']))['filename'].time();
+		// echo'<pre>';
+		// 	print_r($_FILES);
+		// echo"</pre>";
+		
 	}
 
  ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

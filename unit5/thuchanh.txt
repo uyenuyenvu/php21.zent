@@ -1,0 +1,43 @@
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `avatar`, `created_at`)
+VALUES
+	(1,'Trần Minh Đức','ductm.kma@gmail.com','$2y$10$ogjblHkl8/z5zVVZJj/PbumuFc3jiGZHWqaF5emuVNfPYPBf8nfyW','/avata.png','2019-08-09 14:47:54'),
+	(2,'Vũ Văn Thương','thuongvv.hust@gmail.com','$2y$10$ogjblHkl8/z5zVVZJj/PbumuFc3jiGZHWqaF5emuVNfPYPBf8nfyW','/avata.png','2019-08-09 14:50:10'),
+	(3,'Nguyễn Văn Hiệp','hiepbk@gmail.com','$2y$10$ogjblHkl8/z5zVVZJj/PbumuFc3jiGZHWqaF5emuVNfPYPBf8nfyW','/image.png','2019-08-09 14:50:42'),
+	(4,'Hoàng Trung Hiếu','hieuht@gmail.com','$2y$10$ogjblHkl8/z5zVVZJj/PbumuFc3jiGZHWqaF5emuVNfPYPBf8nfyW','/image.png','2019-08-09 14:51:11'),
+	(5,'Nguyễn Hải Anh','haianh.bka@gmail.com','$2y$10$ogjblHkl8/z5zVVZJj/PbumuFc3jiGZHWqaF5emuVNfPYPBf8nfyW','/haianh.png','2019-08-09 14:51:45'),
+	(6,'Trần Danh Tùng','tungtd.kma@gmail.com','jiGZHWqaF5emuVNfPYPBf8nfyW','/anh.png','2019-08-08 12:12:12');
+
+
+
+INSERT INTO `categories` (`id`, `name`, `parent_id`, `thumbnail`, `slug`, `description`, `created_at`)
+VALUES
+	(1,'Thời sự',NULL,'/thoisu.png','thoi-su','Chuyên mục thời sự','2019-08-09 14:53:31'),
+	(2,'Tin trong nước',1,'/tintrongnuoc.png','tin-trong-nuoc','Chuyện mục thời sự - Tin trong nước','2019-08-09 14:55:00'),
+	(3,'Tin nước ngoài',1,'/tinnuocngoai.png','tin-nuoc-ngoai','Chuyện mục thời sự - Tin nước ngoài','2019-08-09 14:55:31'),
+	(4,'Văn hóa - Xã hội',NULL,'/vanhoa.png','van-hoa-xa-hoi','Chuyên mục văn hóa - xã hội','2019-08-09 14:56:12'),
+	(5,'Công nghệ',NULL,'/congnghe.png','cong-nghe','Chuyên mục công nghệ','2019-08-09 14:58:11'),
+	(6,'Tin tức lập trình',5,'/laptrinh.png','tin-tuc-lap-trinh','Chyện mục công nghệ - tin tức lập trình','2019-08-09 14:58:50'),
+	(7,'Tin tức công nghệ ',5,'/tintuccongnghe.png','tin-tuc-cong-nghe','Chyên mục công nghệ - tin tức công nghệ','2019-08-09 15:00:01');
+
+
+
+INSERT INTO `posts` (`id`, `title`, `description`, `thumbnail`, `content`, `slug`, `view_count`, `user_id`, `category_id`, `created_at`)
+VALUES
+	(1,'Hiệp ước INF sụp đổ, Mỹ tuyên bố sớm triển khai tên lửa ở châu Á đối phó Trung Quốc?','Ngày 3/8, một ngày sau khi Mỹ chấm dứt Hiệp ước kiểm soát tên lửa tầm trung và tầm ngắn (INF), Bộ trưởng Quốc phòng Mark Esper tuyên bố ủng hộ việc Mỹ sớm triển khai hệ thống tên lửa tầm trung mới ở châu Á.','/anh.png','Reuters đưa tin, người đứng đầu Lầu Năm Góc Mark Esper ngày 3/8 tuyên bố ủng hộ việc Mỹ sớm bố trí các tên lửa tầm trung phóng từ mặt đất tại châu Á, một ngày sau khi Mỹ rút khỏi hiệp ước kiểm soát vũ khí quan trọng ký với Nga từ thời Chiến tranh Lạnh.\n\nTuyên bố trên được đưa ra giữa lúc Mỹ ngày càng quan ngại về những ưu thế quân sự của Trung Quốc tại khu vực châu Á- Thái Bình Dương.\n\nPhát biểu với báo giới tại Sydney, khi được hỏi liệu Mỹ có cân nhắc triển khai các loại tên lửa tầm trung ở châu Á hay không sau khi Mỹ và Nga đã chấm dứt hiệu lực của Hiệp ước các lực lượng hạt nhân tầm trung và tầm ngắn (INF), ông Esper nói: \"Vâng, tôi muốn việc này. Tôi muốn bố trí các tên lửa trong vòng vài tháng tới... nhưng việc này sẽ mất nhiều thời gian hơn dự kiến\".\n\nTrước đó, khi khi trả lời câu hỏi của các thành viên Ủy ban quân lực Thượng viện Mỹ hôm 11/7, Tướng Mark Milley, Tham mưu trưởng lục quân Mỹ, cũng tuyên bố Mỹ có thể triển khai tên lửa tầm trung ở châu Á.','hiep-uoc-inf-sup-do-my-tuyen-bo-som-trien-khai-ten-lua-o-chau-a-doi-pho-trung-quoc',100,1,1,'2019-08-10 15:06:10'),
+	(2,'Galaxy Note10 có gì hay ho hơn Galaxy S10?','Samsung Galaxy Note10 vs Galaxy S10+ có sự khác biệt rõ ràng cả về ngoại hình cũng như các tính năng mới.','/anh.png','Galaxy Note10 mới cuối cùng đã xuất hiện chính thức. Theo truyền thống, mỗi năm khi một thiết bị Galaxy Note mới xuất hiện, chúng chắc chắn được so sánh với các flagship mới nhất của Samsung từ dòng Galaxy S. Và năm nay, Galaxy S10+ là phiên bản mà gần nhất với Galaxy Note10 về thông số kỹ thuật và tính năng.\n\nMàn hình 1080p trên Galaxy Note10\n\nMàn hình của Galaxy Note10 chỉ nhỏ hơn 1 inch so với màn hình trên Galaxy S10 +, đáng chú ý hơn là độ phân giải trên Galaxy Note10 chỉ là 1080x2280 pixel so với 1440x3040 của Galaxy S10 +.','galaxy-note10-co-gi-hay-ho-hon-galaxy-s10',1,2,7,'2019-08-11 15:06:13'),
+	(3,'Hội thảo chia sẻ định hướng cho tân sinh viên K64 tại khoa CNTT – Học viện Nông nghiệp Việt Nam','Chiều ngày 21 tháng 9 vừa qua, tại Hội trường A – Học viện Nông nghiệp Việt Nam đã diễn ra buổi hội thảo dành cho các bạn tân sinh viên K64 – Khoa CNTT – Học viện Nông nghiệp Việt Nam.','/anhhh.png','Tham dự buổi hội thảo có đại diện lãnh đạo công ty TNHH Công nghệ và Đào tạo DevMind, thầy cô giáo giảng viên khoa CNTT – Học viện Nông nghiệp Việt Nam, công ty đối tác, nhà tài trợ, các anh chị diễn giả tham gia chia sẻ và gần 200 bạn tân sinh viên K64 – Khoa CNTT của học viện.','Hoi-thao-chia-se-dinh-huong-cho-tan-sinh-vien-K64-tai-khoa-CNTT-Hoc-vien-Nong-Nghiep-Viet_nam',10,2,5,'2019-08-012 15:06:13'),
+	(4,'Siêu thị điện máy bốc cháy ngùn ngụt','Ngọn lửa bùng phát rồi nhanh chóng lan rộng lên tầng 2 và 3 của một siêu thị điện máy nằm tại thị xã Ba Đồn (Quảng Bình), thiêu rụi nhiều hàng hoá giá trị.','/anhhhh.png','Theo đó vào khoảng 5h30 cùng ngày, người dân hoảng hốt khi thấy ngọn lửa bùng lên từ khu vực tầng 2 của siêu thị. Do bên trong có nhiều đồ điện tử, máy móc dễ phát nổ khiến ngọn lửa nhanh chóng lan rộng lên tầng 3.','sieu-thi-dien-may-boc-chay-ngun-ngut',15,3,2,'2019-08-13 15:06:13'),
+	(5,'Nữ sinh năm thứ nhất đăng quang Hoa khôi ĐH Hà Nội 2019','Đêm 18/10, không khí chung kết cuộc thi Hoa khôi ĐH Hà Nội - Glorious HANU 2019 đã thực sự bùng nổ. Với câu trả lời ứng xử chân thành, nữ sinh năm thứ nhất Nguyễn Khánh Ly (khoa Quản trị Kinh doanh và Du lịch) đã bứt phá để giành ngôi vị Hoa khôi.','/anhhh5.png','Đây là đêm hội sắc đẹp của 11 gương mặt - 11 mảnh ghép sắc màu rực rỡ của nữ sinh trường ĐH Hà Nội, nhằm tìm ra gương mặt xứng đáng nhất đại diện cho sinh viên của ngôi trường được mệnh danh là “mái nhà đa văn hóa” này.','nu-sinh-nam-thu-nhat-dang-quang-hoa-khoi-dh-ha-noi-2019',15,4,3,'2019-08-14 15:06:13');
+
+
+
+SELECT * FROM posts WHERE view_count >10
+
+
+SELECT * FROM posts 
+ORDER BY created_at DESC LIMIT 3
+
+
+SELECT * FROM posts p JOIN categories c on p.category_id = c.id AND c.`name`='Thời sự'
+
+
