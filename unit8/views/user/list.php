@@ -24,8 +24,15 @@
 			<td>#</td>
 		</tr>
 		<?php 
+
+
 			foreach ($user as $key=>$value)
 			if($value['deleted_at']==NULL) {
+
+				// echo "<pre>";
+				// print_r($value);
+				// echo "</pre>";
+
 				echo "<tr>";
 					echo "<td>".$value['id']."</td>";
 					echo "<td>".($value['name'])."</td>";
@@ -34,5 +41,7 @@
 				echo "</tr>";
 			}
 		 ?>
+
+
  </body>
  </html>

@@ -14,7 +14,8 @@
  </head>
  <body>
  	<h1 align="center"><b>Neww</b></h1>
- 	<a href="post_add.php" class="btn btn-success">++ Add</a>
+ 	<a href="?mod=post&act=add" class="btn btn-success">++ Add</a>
+
 	<form action="" method="GET">
 	<table class="table table-striped">
 		<tr>
@@ -33,7 +34,7 @@
 					echo "<td>".($value['title'])."</td>";
 					echo '<td><img src="'.$value['thumbnail'].'"" style="width: 60px; height: 60px;"></td>';
 					echo "<td>".$value['view_count']."</td>";
-					echo "<td>".' <a href="post_detail.php?id='.$value['id'].'&slug='.$value['slug'].'" class="btn btn-success">xem</a> '.'<a href="post_delete_process.php?id='.$value['id'].'" class="btn btn-success">xóa</a>'.' <a href="post_edit.php?id='.$value['id'].'" class="btn btn-success">sửa</a> '."</td>";
+					echo "<td>".' <a href="?mod=post&act=detail&id='.$value['id'].'&slug='.$value['slug'].'" class="btn btn-success">xem</a> '.'<a href="?mod=post&act=delete&id='.$value['id'].'" class="btn btn-success">xóa</a>'.' <a href="?mod=post&act=edit&id='.$value['id'].'" class="btn btn-success">sửa</a> '."</td>";
 				echo "</tr>";
 			}
 		 ?>

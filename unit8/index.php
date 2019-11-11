@@ -17,8 +17,17 @@
 				case 'detail':
 					$Category_obj->detail();
 					break;
-				case 'edit':
-					$Category_obj->edit();
+				 case 'edit':
+				 	$Category_obj->edit();
+					break;
+				case 'update':
+					$Category_obj->update();
+					break;
+				case 'delete':
+					$Category_obj->delete();
+					break;
+				case 'store':
+					$Category_obj->store();
 					break;
 				
 				default:
@@ -34,12 +43,24 @@
 					$Post_obj->list();
 					break;
 				case 'add':
-					echo "<br> >>>> thêm mới bài viết";
+					$Post_obj->add();
+					break;
+				case 'store':
+					$Post_obj->store();
 					break;
 				case 'edit':
-					echo "<br> >>>> sửa bài viết";
+					$Post_obj->edit();
 					break;
-				
+				case 'detail':
+					$Post_obj->detail();
+					break;
+				case 'update':
+					$Post_obj->update();
+					break;
+				case 'delete':
+					$Post_obj->delete();
+					break;
+
 				default:
 					echo "<br> atc 404";
 					break;
@@ -53,10 +74,10 @@
 					$User_obj->list();
 					break;
 				case 'add':
-					echo "<br> >>>> thêm mới người dùng";
+				$User_obj->add(); 
 					break;
 				case 'edit':
-					echo "<br> >>>> sửa người dùng";
+					$User_obj->edit(); 
 					break;
 				case 'detail':
 					$User_obj->detail(); 

@@ -1,6 +1,4 @@
-<?php 
-    session_start();
- ?>
+
  <!DOCTYPE html>
  <html lang="en">
  <head>
@@ -16,8 +14,13 @@
  </head>
  <body>
     <h1 align="center"><b>---CATEGORIES---</b></h1>
-    <a href="category_add.php" class="btn btn-success">++ Add</a>
-    <form action="" method="GET">
+    <a href="?mod=category&act=add" class="btn btn-success">++ Add</a>
+        <?php 
+        if(isset($_COOKIE['msg']))
+            echo $_COOKIE['msg'];
+         if(isset($_COOKIE['msgDel']))
+            echo $_COOKIE['msgDel'];
+     ?>
     <table class="table table-striped">
         <tr>
             <td>Code</td>
@@ -32,10 +35,11 @@
                     echo "<tr>";
                     echo "<td>".$value['id']."</td>";
                     echo "<td>".($value['name'])."</td>";
-                    echo '<td><img src="img/'.$value['thumbnail'].'"" style="width: 60px; height: 60px;"></td>';
-                    echo "<td>".' <a href="category_detail.php?id='.$value['id'].'&slug='.$value['slug'].'" class="btn btn-success">xem</a> '.'<a href="category_delete_process.php?id='.$value['id'].'" class="btn btn-success">xóa</a>'.' <a href="category_edit.php?id='.$value['id'].'" class="btn btn-success">sửa</a> '."</td>";
+                    echo '<td><img src="'.$value['thumbnail'].'"" style="width: 60px; height: 60px;"></td>';
+                    echo "<td>".' <a href="?mod=category&act=detail&id='.$value['id'].'&slug='.$value['slug'].'" class="btn btn-success">xem</a> '.'<a href="?mod=category&act=delete&id='.$value['id'].'" class="btn btn-success">xóa</a>'.' <a href="?mod=category&act=edit&id='.$value['id'].'" class="btn btn-success">sửa</a> '."</td>";
                 echo "</tr>";
             }
          ?>
+     </table>
  </body>
  </html>

@@ -8,48 +8,66 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
-    <!-- Optional theme -->
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css">
+    <!-- <script type="text/javascript" src="ckeditor_path/ckeditor.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#textarea').summernote();
+        })
+    </script>
 </head>
 <body>
     <div class="container">
     <h3 align="center">DevMind - Education And Technology Group</h3>
-    <h3 align="center">Add New Category</h3>
-    <a href="index.php" class="btn btn-success"><< Back to home</a>
-
+    <h3 align="center">Add New Post</h3>
+    <a href="posts.php" class="btn btn-success"><< Back to home</a>
     <hr> 
-        <form action="?mod=category&act=store" method="POST" role="form" enctype="multipart/form-data">
+        <form action="?mod=post&act=store" method="POST" role="form" enctype="multipart/form-data"> 
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" class="form-control" id="" placeholder="" name="name">
+                <input type="text" class="form-control" id="" placeholder="" name="title">
             </div>
-
             <div class="form-group">
                 <label for="">thumbnail</label>
                 <input type="file" class="form-control" id="thumbnail" placeholder="" name="thumbnail">
                 
             </div>
-
              <div class="form-group">
-                <label for="">parent_id</label>
-                <select  class="form-control" name="parent_id">
+                <label for="">content</label>
+                <textarea type="text" class="form-control" placeholder="" name="content" id="textarea"></textarea> 
+                
+            </div>
+             <div class="form-group">
+                <label for="">Author</label>
+                <select  class="form-control" name="user_id">
 
-                    <option name="" id="" value="0" >moi chon danh muc cha</option>
-                    <?php foreach ($categories as $key) {
+                    <option name="" id="" value="0" >moi chon tac gia</option>
+                    <?php foreach ($user as $key) {
                      ?>
                     <option name="" id="" value='<?= $key['id']?>' ><?= $key['name']?></option>
                 <?php } ?>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="">category</label>
+                <select  class="form-control" name="category_id">
 
+                    <option name="" id="" value="0" >moi chon danh muc</option>
+                    <?php foreach ($cate as $key) {
+                     ?>
+                    <option name="" id="" value='<?= $key['id']?>' ><?= $key['name']?></option>
+                <?php } ?>
+                </select>
+            </div>
             <div class="form-group">
                 <label for="">slug</label>
                 <input type="text" class="form-control" id="" placeholder="" name="slug">
             </div>
-            
             <div class="form-group">
                 <label for="">description</label>
                 <input type="text" class="form-control" id="" placeholder="" name="description">
@@ -58,4 +76,5 @@
         </form>
     </div>
 </body>
+
 </html>
