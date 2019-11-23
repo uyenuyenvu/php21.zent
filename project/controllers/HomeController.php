@@ -28,9 +28,15 @@
 		}
 
 		function index(){
-			$post=$this->post_model_obj->getAll();
-			$posts_page=$this->post_model_obj->paginite();
-			$categories=$this->cate_model_obj->getAll();
+			$posts=$this->post_model_obj->getAll();
+
+			if(isset($_GET['i'])){
+				$i=$_GET['i'];
+			}else{
+				$i=1;
+			}
+			$posts_page=$this->post_model_obj->paginite($limit=6,$page=$i);
+			 $categories=$this->cate_model_obj->getAll();
 			$users=$this->user_model_obj->getAll();
 			$posts_popular=$this->post_model_obj->getPopular();
 			require_once('views/home/index.php');

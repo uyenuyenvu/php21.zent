@@ -3,7 +3,7 @@
 	include_once('left-top.php');
  ?>
  	<h1 align="center"><b>XEM CHI TIẾT</b></h1>
- 	<a href="?mod=category&act=list" class="btn btn-success"><< back to home</a>
+ 	<a href="?mod=category&act=index" class="btn btn-success"><< back to home</a>
 	<table class="table table-striped">
 		<tr>
 			<td>ID</td>
@@ -17,7 +17,7 @@
 			<td>img</td>
 			<td>
 			
-				<img src="public/admin/production/images/<?= $cate['thumbnail'] ?>" width="200px" height="200px">
+				<img src="public/home/images/<?= $cate['thumbnail'] ?>" width="200px" height="200px">
 			</td>
 		</tr>
 		<tr>

@@ -2,11 +2,11 @@
 require_once('connection.php');
 	class Post{
 
-		function paginite($limit=10,$page=1){
+		function paginite($limit=6,$page=1){
 				$connection_obj=new connection();
 			
-				$query = "SELECT * FROM posts WHERE deleted_at is NULL AND stt=1 limit ".(($page-1)*10).",".$limit."";
-	
+				$query = "SELECT * FROM posts WHERE deleted_at is NULL AND stt=1 limit ".(($page-1)*$limit).",".$limit."";
+				// die($query);
 				$result = $connection_obj->conn->query($query);
 				$posts = array();
 
@@ -17,6 +17,10 @@ require_once('connection.php');
 				$result = $connection_obj->conn->query($query1);
 				$row = $result->fetch_assoc();
 				$_SESSION['total']=$row['count(id)'];
+				// echo "<pre>";
+				// 	print_r($posts);
+				// echo "</pre>";
+				// die();
 				return $posts;
 
 		}
@@ -91,15 +95,19 @@ require_once('connection.php');
 				return $post;
 		}
 		function creat($data){
+			// die($data['title']);
+			// die($this->slug($data['title']));
 				$connection_obj=new connection();
-		        $cols='stt,';
-			    $values='0,';
+		        $cols='stt,slug,user_id,';
+			    $values='0,"'.$this->slug($data['title']).'",'.$_SESSION['user']['id'].',';
+
 			    foreach ($data as $key => $value) {
 	    		
 	    		$cols.=$key.',';
 	    		$values.='"'.$value.'",';
 	   		    }
 		   		 $query='INSERT INTO posts('.$cols.'created_at) VALUES ('.$values.'"'.date("y-m-d h:i:s").'")';
+		   		 // die($query);
 		   		 $result=$connection_obj->conn->query($query);                    
 	                    return $result;
 
@@ -113,7 +121,7 @@ require_once('connection.php');
                         $query.=$key."='".$value."', ";
                    }
             
-                 $query.="updated_at='".date('y-m-d h:i:s')."'";
+                 $query.="updated_at='".date('y-m-d h:i:s')."',slug='".$this->slug($data['title']."'");
                    $query.=" WHERE id=".$_POST['id'];
 
                   
@@ -149,6 +157,19 @@ require_once('connection.php');
 			 $result=$connection_obj->conn->query($query);
 			 return $result;
 		}
+		function slug($str) {
+		    $str = trim(mb_strtolower($str));
+		    $str = preg_replace('/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/', 'a', $str);
+		    $str = preg_replace('/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/', 'e', $str);
+		    $str = preg_replace('/(ì|í|ị|ỉ|ĩ)/', 'i', $str);
+		    $str = preg_replace('/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/', 'o', $str);
+		    $str = preg_replace('/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/', 'u', $str);
+		    $str = preg_replace('/(ỳ|ý|ỵ|ỷ|ỹ)/', 'y', $str);
+		    $str = preg_replace('/(đ)/', 'd', $str);
+		    $str = preg_replace('/[^a-z0-9-\s]/', '', $str);
+		    $str = preg_replace('/([\s]+)/', '-', $str);
+		    return $str;
+	}
 
 	}
 

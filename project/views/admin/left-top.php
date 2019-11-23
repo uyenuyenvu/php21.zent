@@ -33,6 +33,7 @@
       <!-- Latest compiled and minified JavaScript --><!-- 
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     
   </head>
 
@@ -92,8 +93,17 @@
                     </ul>
                   </li>
                
-                 
-             
+                  <?php 
+                          if( $_SESSION['user']['auth']==1){
+                  ?>
+                  <li><a><i class="fa fa-desktop"></i> Quản lí bloger <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="?mod=user&act=index">Danh sách bloger</a></li>             
+                    </ul>
+                  </li>
+                  <?php 
+                    }
+                   ?>
                 </ul>
               </div>
               
@@ -133,7 +143,7 @@
                     <img src="public/home/images/<?= $_SESSION['user']['avatar']?>" alt=""><?php echo $_SESSION['user']['name']; ?>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="javascript:;"> Trang cá nhân</a>
+                    <a class="dropdown-item"  href="?mod=user&act=detail&id=<?= $_SESSION['user']['id']?>&i=1"> Trang cá nhân</a>
                       <a class="dropdown-item"  href="javascript:;">
                         <span class="badge bg-red pull-right">50%</span>
                         <span>Cài đặt</span>

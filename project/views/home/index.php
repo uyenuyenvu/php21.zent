@@ -197,7 +197,7 @@
                     <img src="public/home/images/<?= $value['thumbnail'] ?>" alt="Image placeholder">
                     <div class="blog-content-body">
                       <div class="post-meta">
-                        <span class="author mr-2"><img src="public/home/images/<?= $value['thumbnail'] ?>" alt="Colorlib"> <?= $user['name'] ?></span>&bullet;
+                        <span class="author mr-2"><img src="public/home/images/<?= $user['avatar'] ?>" alt="Colorlib"> <?= $user['name'] ?></span>&bullet;
                         <span class="mr-2"><?= $created_at ?></span> &bullet;
                         <span class="ml-2"><span class="fa fa-eye"></span><?php echo $value['view_count']; ?></span>
                       </div>
@@ -218,9 +218,9 @@
                     <ul class="pagination">
                       <li class="page-item  active"><a class="page-link" href="#">&lt;</a></li>
                       <?php   
-                            for($i=1;$i<=($_SESSION['total']/10)+1;$i++){
+                            for($i=1;$i<=($_SESSION['total']/6)+1;$i++){
                                     ?>
-                         <li class="page-item"><a class="page-link" href="#"><?= $i?></a></li>
+                         <li class="page-item"><a class="page-link" href="?mod=home&act=index&i=<?= $i?>"><?= $i?></a></li>
                         
                         <?php
                             }

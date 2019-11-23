@@ -59,5 +59,23 @@
             $('#textarea').summernote();
         })
     </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+   
+     <script type="text/javascript">
+         $(document).ready(function(){
+             <?php 
+        if(isset($_COOKIE['msg'])){
+     ?>
+            toastr.info(<?= $_COOKIE['msg']?>, '');
+        <?php 
+     }
+      if(isset($_COOKIE['err'])){
+     ?>
+             toastr.error(<?= $_COOKIE['err']?>, '');
+     <?php 
+     } ?>
+         })
+     </script>
+     
   </body>
 </html>

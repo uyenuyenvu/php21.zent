@@ -52,9 +52,9 @@
             </div>
             <div class="form-group">
                 <label for="">thumbnail</label>
-                <img src="img/<?= $cate['thumbnail'] ?>" width="200px" height="200px">
+                <img src="<?= $cate['thumbnail'] ?>" width="200px" height="200px">
                 <input type="file" class="form-control" id="thumbnail" placeholder="" name="thumbnail"  value=" <?php echo($cate['thumbnail']) ?> " >
-         <!--        <input type="submit" value="Upload Image" name="submit"> -->
+         <!--        <inp ut type="submit" value="Upload Image" name="submit"> -->
             </div>
            <div class="form-group">
                 <label for="">parent_id</label>

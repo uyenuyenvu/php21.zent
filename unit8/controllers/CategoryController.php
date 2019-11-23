@@ -1,4 +1,4 @@
-<?php 
+<?php  
 	require_once('models/Category.php');
 
 	class CategoryController{

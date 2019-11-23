@@ -22,7 +22,7 @@
 						<td><?= $value['id']?></td>
 					<td><?= $value['name']?></td>
 					<td>
-						<img src="<?= $value['thumbnail']?>" style="width: 60px; height: 60px;">
+						<img src="public/home/images/<?= $value['thumbnail']?>" style="width: 60px; height: 60px;">
 					</td>
 					
 					

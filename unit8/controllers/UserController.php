@@ -21,13 +21,17 @@
 			$uid=$_GET['id'];
 			$user=$this->model_obj->find($uid);
 			require_once("views/user/detail.php");
+		    }
 		}
+		function delete(){
+			$user=$this->model_obj->delete();
 		}
 		function edit(){
 			
 		}
 		function error(){
 			 echo "act 404";
+		}
 		}
 	}
 

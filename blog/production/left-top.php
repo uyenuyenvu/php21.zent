@@ -36,7 +36,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>I am Uyen!</span></a>
+              <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>I am Bolger!</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -60,97 +60,28 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a href="index.php"><i class="fa fa-home"></i> Home</span></a>
+                  <li><a href="index.php"><i class="fa fa-home"></i> Trang chủ</span></a>
                    
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-edit"></i> Quản lí bài viết <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">General Form</a></li>
-                      <li><a href="#">Advanced Components</a></li>
-                      <li><a href="#">Form Validation</a></li>
-                      <li><a href="#">Form Wizard</a></li>
-                      <li><a href="#">Form Upload</a></li>
-                      <li><a href="#">Form Buttons</a></li>
+                      <li><a href="#">Danh sách bài viết</a></li>
+                      <li><a href="#">Thêm mới bài viết</a></li>
+               
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-desktop"></i> Quản lí danh mục <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">General Elements</a></li>
-                      <li><a href="#">Media Gallery</a></li>
-                      <li><a href="#">Typography</a></li>
-                      <li><a href="#">Icons</a></li>
-                      <li><a href="#">Glyphicons</a></li>
-                      <li><a href="#">Widgets</a></li>
-                      <li><a href="#">Invoice</a></li>
-                      <li><a href="#">Inbox</a></li>
-                      <li><a href="#">Calendar</a></li>
+                      <li><a href="#">Danh sách danh mục</a></li>
+                      <li><a href="#">Thêm mới danh mục</a></li>                  
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="#">Tables</a></li>
-                      <li><a href="#">Table Dynamic</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="#">Chart JS</a></li>
-                      <li><a href="#">Chart JS2</a></li>
-                      <li><a href="#">Moris JS</a></li>
-                      <li><a href="#">ECharts</a></li>
-                      <li><a href="#">Other Charts</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="#">Fixed Sidebar</a></li>
-                      <li><a href="#">Fixed Footer</a></li>
-                    </ul>
-                  </li>
+               
+                 
+             
                 </ul>
               </div>
-              <div class="menu_section">
-                <h3>Live On</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="#">E-commerce</a></li>
-                      <li><a href="#">Projects</a></li>
-                      <li><a href="#">Project Detail</a></li>
-                      <li><a href="#">Contacts</a></li>
-                      <li><a href="#">Profile</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="page_403.php">403 Error</a></li>
-                      <li><a href="page_404.php">404 Error</a></li>
-                      <li><a href="page_500.php">500 Error</a></li>
-                      <li><a href="#">Plain Page</a></li>
-                      <li><a href="#">Login Page</a></li>
-                      <li><a href="#">Pricing Tables</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                        <li><a href="#level1_1">Level One</a>
-                        <li><a>Level One<span class="fa fa-chevron-down"></span></a>
-                          <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="#">Level Two</a>
-                            </li>
-                            <li><a href="#level2_1">Level Two</a>
-                            </li>
-                            <li><a href="#level2_2">Level Two</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li><a href="#level1_2">Level One</a>
-                        </li>
-                    </ul>
-                  </li>                  
-                  <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
-                </ul>
-              </div>
+              
 
             </div>
             <!-- /sidebar menu -->
@@ -187,13 +118,13 @@
                     <img src="images/uyen.jpg" alt="">Vu Uyen
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="javascript:;"> Profile</a>
+                    <a class="dropdown-item"  href="javascript:;"> Trang cá nhân</a>
                       <a class="dropdown-item"  href="javascript:;">
                         <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
+                        <span>Cài đặt</span>
                       </a>
-                  <a class="dropdown-item"  href="javascript:;">Help</a>
-                    <a class="dropdown-item"  href="login.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+               
+                    <a class="dropdown-item"  href="login.php"><i class="fa fa-sign-out pull-right"></i> Đăng xuất</a>
                   </div>
                 </li>
 

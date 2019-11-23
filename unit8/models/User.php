@@ -9,26 +9,29 @@
 		        $result = $connection_obj->conn->query($query);
 
 
-				$user = array();
+				$users = array();
 
 				while($row = $result->fetch_assoc()) { 
-					$user[] = $row;
+					$users[] = $row;
 				}
 
-				return $user;
+				return $users;
  		}
- 		function find($id){
+ 		function find($id){ 
 
 				$connection_obj=new connection();
 				$query = "SELECT * FROM users WHERE id=".$id;
+				die($query);
 				$result = $connection_obj->conn->query($query);
-
-
-				$row = $result->fetch_assoc();
-
-				$user=$row;
+	
+				while($row = $result->fetch_assoc()) { 
+					$user[] = $row;
+				}
 				return $user;
 			 		}
+		function delete(){
+				
+		}
  	}
 
   ?>

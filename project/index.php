@@ -163,14 +163,33 @@
 			case 'user':
 		//kiểm tra đã login hay chưa???
 				if (isset($_SESSION['is_login'])) {
+
+					require_once('controllers/UserController.php');
+					$controller_obj = new UserController();
 				switch ($act) {
 					//Xem danh sách danh mục
 					case 'index':
-						# code...
+						$controller_obj->list();
 						break;
-					//Hiển thị form tạo mới
-					case 'create':
-						# code...
+					//xem chi tiết
+					case 'detail':
+						$controller_obj->detail();
+						break;
+					//gọi form chỉnh sửa
+					case 'edit':
+						$controller_obj->edit();
+						break;
+					//chỉnh sửa
+					case 'update':
+						$controller_obj->update();
+						break;
+					//tắt quyền hoạt động
+					case 'unapproved':
+						$controller_obj->unapproved();
+						break;
+					//bật quyền hoạt động
+					case 'approved':
+						$controller_obj->approved();
 						break;
 					//Thêm mới danh mục
 					case 'store':

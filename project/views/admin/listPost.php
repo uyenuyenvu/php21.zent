@@ -3,7 +3,7 @@
 
     
  ?>
-
+	
  	<a href="?mod=post&act=add" class="btn btn-success">++ Add</a>
 	<table class="table table-striped">
 		<tr>

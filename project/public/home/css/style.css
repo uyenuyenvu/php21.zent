@@ -501,6 +501,7 @@ header {
   color: #b3b3b3; }
   .blog-entries .post-meta .author img {
     width: 30px;
+    height: 30px;
     border-radius: 50%;
     display: inline-block; }
 

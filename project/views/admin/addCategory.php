@@ -28,10 +28,7 @@
                 </select>
             </div>
 
-            <div class="form-group">
-                <label for="">slug</label>
-                <input type="text" class="form-control" id="" placeholder="" name="slug">
-            </div>
+           
             
             <div class="form-group">
                 <label for="">description</label>
