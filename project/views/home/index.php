@@ -1,4 +1,4 @@
-<
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -52,7 +52,7 @@
           <div class="row pt-5">
             <div class="col-12 text-center">
               <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-              <h1 class="site-logo"><a href="index.html">Wordify</a></h1>
+              <h1 class="site-logo"><a href="?mod=home">UYÊN</a></h1>
             </div>
           </div>
         </div>
@@ -114,49 +114,49 @@
 
               <div class="owl-carousel owl-theme home-slider">
                 <div>
-                  <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('public/home/images/img_1.jpg'); ">
+                  <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('public/home/images/img5.PNG'); ">
                     <div class="text half-to-full">
-                      <span class="category mb-5">Food</span>
+             
                       <div class="post-meta">
                         
-                        <span class="author mr-2"><img src="public/home/images/person_1.jpg" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="author mr-2"><img src="public/home/images/uyen.PNG" alt="Colorlib"> Vũ Thị Uyên</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                         
                       </div>
-                      <h3>How to Find the Video Games of Your Youth</h3>
+                      <h3>How to be cute like Uyen ??</h3>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
                     </div>
                   </a>
                 </div>
                 <div>
-                  <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('public/homeimages/img_2.jpg'); ">
+                  <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('public/home/images/img11.PNG'); ">
                     <div class="text half-to-full">
-                      <span class="category mb-5">Travel</span>
+               
                       <div class="post-meta">
                         
-                        <span class="author mr-2"><img src="public/home/images/person_1.jpg" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="author mr-2"><img src="public/home/images/uyen.PNG" alt="Colorlib"> Vũ Thị Uyên</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                         
                       </div>
-                      <h3>How to Find the Video Games of Your Youth</h3>
+                      <h3>How to be cute like Uyen ??</h3>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
                     </div>
                   </a>
                 </div>
                 <div>
-                  <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('public/home/images/img_3.jpg'); ">
+                  <a href="blog-single.html" class="a-block d-flex align-items-center height-lg" style="background-image: url('public/home/images/img12.jpg'); ">
                     <div class="text half-to-full">
-                      <span class="category mb-5">Sports</span>
+   
                       <div class="post-meta">
                         
-                        <span class="author mr-2"><img src="public/home/images/person_1.jpg" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="author mr-2"><img src="public/home/images/uyen.PNG" alt="Colorlib">  Vũ Thị Uyên</span>&bullet;
                         <span class="mr-2">March 15, 2018 </span> &bullet;
                         <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                         
                       </div>
-                      <h3>How to Find the Video Games of Your Youth</h3>
+                      <h3>How to be cute like Uyen ??</h3>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem nobis, ut dicta eaque ipsa laudantium!</p>
                     </div>
                   </a>
@@ -253,11 +253,11 @@
               <!-- END sidebar-box -->
               <div class="sidebar-box">
                 <div class="bio text-center">
-                  <img src="public/home/images/person_1.jpg" alt="Image Placeholder" class="img-fluid">
+                  <img src="public/home/images/uyen.PNG" alt="Image Placeholder" class="img-fluid">
                   <div class="bio-body">
-                    <h2>David Craig</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                    <p><a href="#" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                    <h2>Vũ Thị Uyên</h2>
+                    <p>Tớ là Uyên đây, hiện tớ đang là sinh viên năm 2 của Học Viện Nông Nghiệp Việt Nam. 
+                  Tớ có chiều cao 1m48, cân nặng 42kg nên tớ khá dễ thương nha mọi người. Tớ thích màu trắng, thích vẽ truyền thần và thích mèo. Cảm ơn các cậu đã ghé thăm blog của tớ nha =)))</p>
                     <p class="social">
                       <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
                       <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
@@ -279,7 +279,7 @@
 
 
                     <li>
-                      <a href="">
+                      <a href="?mod=home&act=detail&id=<?= $value['id'] ?>&slug=<?=$value['slug']?>">
                         <img src="public/home/images/<?= $value['thumbnail'] ?>" alt="Image placeholder" class="mr-4">
                         <div class="text">
                           <h4><?php echo $value['title']; ?></h4>
@@ -291,7 +291,7 @@
                     </li>
                         <?php  } ?>
                   
-                  </ul>
+                  </ul> 
                 </div>
               </div>
               <!-- END sidebar-box -->
@@ -304,7 +304,7 @@
                     foreach ($categories as $key => $value) {
                       $dem++;
                       if ($dem<6) {
-                        echo '<li><a href="#">'.$value['name'].' <span>(12)</span></a></li>';
+                            echo '<li><a href="?mod=home&act=posts_by_category&id='.$value['id'].'">'.$value['name'].' <span>(12)</span></a></li>';
                       }
                     }
 
@@ -364,7 +364,7 @@
                                $created_at=  date ("jS M Y", strtotime($value['created_at']));
                               ?>
                               <li>
-                                  <a href="">
+                                  <a href="?mode=home&act=detail&id=<?= $value['id']?>&slug=<?= $value['slug']?>">
                                     <img src="public/home/images/<?php echo $value['thumbnail']; ?>" alt="Image placeholder" class="mr-4">
                                     <div class="text">
                                       <h4><?php echo $value['title']; ?></h4>

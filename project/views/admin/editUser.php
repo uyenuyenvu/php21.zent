@@ -28,7 +28,7 @@
 
             <div class="form-group">
                 <label for="">password</label>
-                <input type="password" class="form-control" id="" placeholder="" name="password"  value=" <?php echo($user['password']) ?> " >
+                <input type="password" class="form-control" id="" placeholder="" name="password"   >
             </div>
             <button type="submit" class="btn btn-primary" name="submit">Update</button>
         </form>

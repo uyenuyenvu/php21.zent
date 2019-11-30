@@ -22,6 +22,7 @@
 			$categories=$this->cate_model_obj->getAll();
 			$posts_popular=$this->post_model_obj->getPopular();
 			$post=$this->post_model_obj->find($_GET['id']);
+			$related=$this->post_model_obj->posts_by_category($post['category_id']);
 			$user=$this->user_model_obj->find($post['user_id']);
 			$category=$this->cate_model_obj->find($post['category_id']);
 			require_once('views/home/blog-single.php');
@@ -46,7 +47,19 @@
 			$posts=$this->post_model_obj->getAll();
 			$posts_popular=$this->post_model_obj->getPopular();
 			$users=$this->user_model_obj->getAll();
+			foreach ($posts as $key => $value) {
+				$value['user']=$this->user_model_obj->find($value['user_id']);
+			}
 			$posts_by_cate=$this->post_model_obj->posts_by_category($_GET['id']);
+			foreach ($posts_by_cate as $key => $value) {
+				$posts_by_cate[$key]['user']=array();
+				$posts_by_cate[$key]['user']=$this->user_model_obj->find($value['user_id']);
+			
+			}
+				// echo "<pre>";
+				// 	print_r($posts_by_cate);
+				// echo "</pre>";
+				// die();
 			$categories=$this->cate_model_obj->getAll();
 			$category=$this->cate_model_obj->find($_GET['id']);
 			require_once('views/home/category.php');

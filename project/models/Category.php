@@ -9,7 +9,7 @@
         }
         function paginite($limit=10,$page=1){
             $query = "SELECT * FROM categories WHERE deleted_at is NULL AND stt=1 limit ".(($page-1)*$limit).",".$limit."";
-            die($query);
+            // die($query);
             $result = $this->connection_obj->conn->query($query);
 
             while($row = $result->fetch_assoc()) { 
@@ -86,8 +86,8 @@ function update($data){
         }
                     // var_dump($this->slug($data['name']));
         var_dump($data['name']);
-        die();
-        $query.='updated_at="'.date('y-m-d h:i:s').'",slug='.$this->slug($data['name']);
+        // die();
+        $query.='updated_at="'.date('y-m-d h:i:s').'",slug="'.$this->slug($data['name']).'"';
         $query.=' WHERE id='.$_POST['id'];
 
                        // die($query);

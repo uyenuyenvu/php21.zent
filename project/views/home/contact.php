@@ -158,11 +158,11 @@
             <!-- END sidebar-box -->
             <div class="sidebar-box">
               <div class="bio text-center">
-                <img src="images/person_1.jpg" alt="Image Placeholder" class="img-fluid">
+                                <img src="public/home/images/uyen.PNG" alt="Image Placeholder" class="img-fluid">
                 <div class="bio-body">
-                  <h2>Meagan Smith</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                  <p><a href="#" class="btn btn-primary btn-sm">Read my bio</a></p>
+                    <h2>Vũ Thị Uyên</h2>
+                  <p>Tớ là Uyên đây, hiện tớ đang là sinh viên năm 2 của Học Viện Nông Nghiệp Việt Nam. 
+                  Tớ có chiều cao 1m48, cân nặng 42kg nên tớ khá dễ thương nha mọi người. Tớ thích màu trắng, thích vẽ truyền thần và thích mèo. Cảm ơn các cậu đã ghé thăm blog của tớ nha =)))</p>
                   <p class="social">
                     <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
                     <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>

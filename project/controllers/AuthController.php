@@ -15,7 +15,7 @@
 
 		function login_process(){
 			$email =$_POST['email'];
-			$password = ($_POST['password']);
+			$password = md5($_POST['password']);
 
 			$user = $this->model_obj->login($email,$password);
 			if($user == NULL){

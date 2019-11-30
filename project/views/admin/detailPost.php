@@ -52,5 +52,13 @@
 		</tr>
 </table>
 <?php 
+	if($post['stt']==0){
+		?>
+			<a href="?mod=post&act=approved&id=<?= $post['id']?>" class="btn btn-success"><i class="fa fa-check"></i></a> 
+						<a href="?mod=post&act=delete&id=<?= $post['id']?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+		<?php
+	}
+ ?>
+<?php 
 	include_once('footer.php');
  ?>

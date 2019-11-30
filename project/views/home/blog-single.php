@@ -49,7 +49,7 @@
           <div class="row pt-5">
             <div class="col-12 text-center">
               <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-              <h1 class="site-logo"><a href="index.html">Wordify</a></h1>
+              <h1 class="site-logo"><a href="index.html">UYÊN</a></h1>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
               <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Business</a>
@@ -85,7 +85,7 @@
                     <?php 
                         foreach ($categories as $key => $value) {
                           ?>
-                          <a class="dropdown-item" href="category.html"><?php echo $value['name']; ?></a>
+                          <a class="dropdown-item" href="?mod=home&act=posts_by_category&id=<?= $value['id']?>"><?php echo $value['name']; ?></a>
                       <?php  } 
                      ?>
                   </div>
@@ -170,11 +170,11 @@
             <!-- END sidebar-box -->
             <div class="sidebar-box">
               <div class="bio text-center">
-                <img src="public/home/images/person_2.jpg" alt="Image Placeholder" class="img-fluid">
+                     <img src="public/home/images/uyen.PNG" alt="Image Placeholder" class="img-fluid">
                 <div class="bio-body">
-                  <h2>Craig David</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                  <p><a href="#" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                  <h2>Vũ Thị Uyên</h2>
+                  <p>Tớ là Uyên đây, hiện tớ đang là sinh viên năm 2 của Học Viện Nông Nghiệp Việt Nam. 
+                  Tớ có chiều cao 1m48, cân nặng 42kg nên tớ khá dễ thương nha mọi người. Tớ thích màu trắng, thích vẽ truyền thần và thích mèo. Cảm ơn các cậu đã ghé thăm blog của tớ nha =)))</p>
                   <p class="social">
                     <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
                     <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
@@ -196,7 +196,7 @@
 
 
                     <li>
-                      <a href="">
+                          <a href="?mode=home&act=detail&id=<?= $value['id']?>&slug=<?= $value['slug']?>">
                         <img src="public/home/images/<?= $value['thumbnail'] ?>" alt="Image placeholder" class="mr-4">
                         <div class="text">
                           <h4><?php echo $value['title']; ?></h4>
@@ -221,7 +221,7 @@
                     foreach ($categories as $key => $value) {
                       $dem++;
                       if ($dem<6) {
-                        echo '<li><a href="#">'.$value['name'].' <span>(12)</span></a></li>';
+                        echo '<li><a href="?mod=home&act=posts_by_category&id='.$value['id'].'">'.$value['name'].' <span>(12)</span></a></li>';
                       }
                     }
 
@@ -263,42 +263,30 @@
           </div>
         </div>
         <div class="row">
+            <?php 
+
+              foreach ($related as $key => $value) {
+                $created_at=  date ("jS M Y", strtotime($value['created_at']))
+                ?>
+
+            
+         
+
           <div class="col-md-6 col-lg-4">
-            <a href="#" class="a-block sm d-flex align-items-center height-md" style="background-image: url('public/home/images/img_2.jpg'); ">
+            <a href="?mod=home&act=detail&id=<?= $value['id']?>&slug=<?= $value['slug']?>" class="a-block sm d-flex align-items-center height-md" style="background-image: url('public/home/images/<?= $value['thumbnail']?>'); ">
               <div class="text">
                 <div class="post-meta">
-                  <span class="category">Lifestyle</span>
-                  <span class="mr-2">March 15, 2018 </span> &bullet;
+                  <span class="category"><?= $category['name']?></span>
+                  <span class="mr-2"><?= $created_at ?></span> &bullet;
                   <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
                 </div>
-                <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
+                <h3><?= $value['title']?></h3>
               </div>
             </a>
           </div>
-          <div class="col-md-6 col-lg-4">
-            <a href="#" class="a-block sm d-flex align-items-center height-md" style="background-image: url('public/home/images/img_3.jpg'); ">
-              <div class="text">
-                <div class="post-meta">
-                  <span class="category">Travel</span>
-                  <span class="mr-2">March 15, 2018 </span> &bullet;
-                  <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                </div>
-                <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-md-6 col-lg-4">
-            <a href="#" class="a-block sm d-flex align-items-center height-md" style="background-image: url('public/home/images/img_4.jpg'); ">
-              <div class="text">
-                <div class="post-meta">
-                  <span class="category">Food</span>
-                  <span class="mr-2">March 15, 2018 </span> &bullet;
-                  <span class="ml-2"><span class="fa fa-comments"></span> 3</span>
-                </div>
-                <h3>There’s a Cool New Way for Men to Wear Socks and Sandals</h3>
-              </div>
-            </a>
-          </div>
+           <?php
+              }
+             ?>
         </div>
       </div>
 
@@ -332,7 +320,7 @@
                                $created_at=  date ("jS M Y", strtotime($value['created_at']));
                               ?>
                               <li>
-                                  <a href="">
+                                     <a href="?mode=home&act=detail&id=<?= $value['id']?>&slug=<?= $value['slug']?>">
                                     <img src="public/home/images/<?php echo $value['thumbnail']; ?>" alt="Image placeholder" class="mr-4">
                                     <div class="text">
                                       <h4><?php echo $value['title']; ?></h4>

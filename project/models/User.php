@@ -67,11 +67,14 @@
                     $query='UPDATE users SET ';
               
                    foreach ($data as $key => $value) 
-                    if($key!='submit'){
+                    if($key!='submit' && $key!='password'){
                         $query.=$key.'="'.$value.'", ';
                         $_SESSION['user'][$key]=$value;
                    }
-            
+            	if($data['password']!='') {
+            		$query.='password="'.md5($data['password']).'",';
+            		$_SESSION['editpass']=1;
+					}
                  $query.='updated_at="'.date('y-m-d h:i:s').'"';
                    $query.=' WHERE id='.$_POST['id'];
 

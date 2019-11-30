@@ -98,15 +98,15 @@ require_once('connection.php');
 			// die($data['title']);
 			// die($this->slug($data['title']));
 				$connection_obj=new connection();
-		        $cols='stt,slug,user_id,';
-			    $values='0,"'.$this->slug($data['title']).'",'.$_SESSION['user']['id'].',';
+		        $cols="stt,slug,user_id,";
+			    $values="0,'".$this->slug($data['title'])."',".$_SESSION['user']['id'].",";
 
 			    foreach ($data as $key => $value) {
 	    		
-	    		$cols.=$key.',';
-	    		$values.='"'.$value.'",';
+	    		$cols.=$key.",";
+	    		$values.="'".$value."',";
 	   		    }
-		   		 $query='INSERT INTO posts('.$cols.'created_at) VALUES ('.$values.'"'.date("y-m-d h:i:s").'")';
+		   		 $query="INSERT INTO posts(".$cols."created_at) VALUES (".$values."'".date("y-m-d h:i:s")."')";
 		   		 // die($query);
 		   		 $result=$connection_obj->conn->query($query);                    
 	                    return $result;
@@ -121,10 +121,12 @@ require_once('connection.php');
                         $query.=$key."='".$value."', ";
                    }
             
-                 $query.="updated_at='".date('y-m-d h:i:s')."',slug='".$this->slug($data['title']."'");
+                 $query.="updated_at='".date('y-m-d h:i:s')."',slug='".$this->slug($data['title'])."'";
+
+                  // die($query);
                    $query.=" WHERE id=".$_POST['id'];
 
-                  
+                  // die($query);
                     // $query = "UPDATE categories SET name='".$_POST['name']."', description='".$_POST['description']."' WHERE id=".$_POST['id'];
                      $result = $connection_obj->conn->query($query);
                     return $result;

@@ -52,12 +52,33 @@
 
     <!-- Custom Theme Scripts -->
     <script src="public/admin/build/js/custom.min.js"></script>
-	 <!-- <script type="text/javascript" src="ckeditor_path/ckeditor.js"></script> -->
+	 <script type="text/javascript" src="ckeditor_path/ckeditor.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
     <script>
         $(document).ready(function () {
-            $('#textarea').summernote();
-        })
+            $('#textarea').summernote({
+            height: 200,
+            onImageUpload: function(files, editor, welEditable) {
+                sendFile(files[0], editor, welEditable);
+            }
+        });
+        function sendFile(file, editor, welEditable) {
+            data = new FormData();
+            data.append("file", file);
+            $.ajax({
+                data: data,
+                type: "POST",
+                url: "Your URL POST (php)",
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(url) {
+                    editor.insertImage(welEditable, url);
+                }
+            });
+        }
+
+        })  
     </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
    

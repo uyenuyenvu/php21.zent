@@ -50,7 +50,7 @@
           <div class="row pt-5">
             <div class="col-12 text-center">
               <a class="absolute-toggle d-block d-md-none" data-toggle="collapse" href="#navbarMenu" role="button" aria-expanded="false" aria-controls="navbarMenu"><span class="burger-lines"></span></a>
-              <h1 class="site-logo"><a href="index.html">Wordify</a></h1>
+              <h1 class="site-logo"><a href="index.html">UYÊN</a></h1>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@
                     <div class="image element-animate" data-animate-effect="fadeIn" style="background-image: url(public/home/images/<?=$value['thumbnail']?>);"></div>
                     <span class="text">
                       <div class="post-meta">
-                        <span class="author mr-2"><img src="public/home/images/person_1.jpg" alt="Colorlib"> Colorlib</span>&bullet;
+                        <span class="author mr-2"><img src="public/home/images/person_1.jpg" alt="Colorlib"><?= $value['user']['name']?></span>&bullet;
                         <span class="mr-2"><?= $created_at ?> </span> &bullet;
                         <span class="mr-2"><?= $category['name'] ?></span> &bullet;
                         <span class="ml-2"><span class="fa fa-eye"></span> <?= $value['view_count'] ?></span>
@@ -184,11 +184,11 @@
             <!-- END sidebar-box -->
             <div class="sidebar-box">
               <div class="bio text-center">
-                <img src="public/home/images/person_2.jpg" alt="Image Placeholder" class="img-fluid">
+                  <img src="public/home/images/uyen.PNG" alt="Image Placeholder" class="img-fluid">
                 <div class="bio-body">
-                  <h2>Craig David</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                  <p><a href="#" class="btn btn-primary btn-sm rounded">Read my bio</a></p>
+                  <h2>Vũ Thị Uyên</h2>
+                  <p>Tớ là Uyên đây, hiện tớ đang là sinh viên năm 2 của Học Viện Nông Nghiệp Việt Nam. 
+                  Tớ có chiều cao 1m48, cân nặng 42kg nên tớ khá dễ thương nha mọi người. Tớ thích màu trắng, thích vẽ truyền thần và thích mèo. Cảm ơn các cậu đã ghé thăm blog của tớ nha =)))</p>
                   <p class="social">
                     <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
                     <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
@@ -210,7 +210,7 @@
 
 
                     <li>
-                      <a href="">
+                      <a href="?mode=home&act=detail&id=<?= $value['id']?>&slug=<?= $value['slug']?>">
                         <img src="public/home/images/<?= $value['thumbnail'] ?>" alt="Image placeholder" class="mr-4">
                         <div class="text">
                           <h4><?php echo $value['title']; ?></h4>
@@ -299,7 +299,7 @@
                                $created_at=  date ("jS M Y", strtotime($value['created_at']));
                               ?>
                               <li>
-                                  <a href="">
+                                    <a href="?mode=home&act=detail&id=<?= $value['id']?>&slug=<?= $value['slug']?>">
                                     <img src="public/home/images/<?php echo $value['thumbnail']; ?>" alt="Image placeholder" class="mr-4">
                                     <div class="text">
                                       <h4><?php echo $value['title']; ?></h4>

@@ -66,8 +66,8 @@
 	
 				if($status) setcookie('msg','cập nhật thành công',time()+3);
 				else setcookie('err','cập nhật thất bại',time()+3);
-			
-				header("Location: ?mod=user&act=detail&id=".$data['id']);
+				if(isset($_SESSION['editpass'])) header("Location: ?mod=admin&act=logout");
+				else header("Location: ?mod=user&act=detail&id=".$data['id']);
 		}
 		function error(){
 			 echo "act 404";

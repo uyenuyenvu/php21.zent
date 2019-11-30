@@ -24,17 +24,7 @@
                 <label for="">content</label>
                 <textarea type="text" class="form-control" placeholder="" name="content" id="textarea"><?php echo($post['content']); ?> </textarea>
             </div>
-            <div class="form-group">
-                <label for="">Author</label>
-                <select  class="form-control" name='user_id'>
-
-                    <option name="" id="" value="0" >moi chon tac gia</option>
-                    <?php foreach ($user as $key) {
-                     ?>
-                    <option <?php if($post['user_id']==$key['id']) echo "selected"; ?> value='<?= $key['id']?>' ><?= $key['name']?></option>
-                <?php } ?>
-                </select>
-            </div>
+     
            <div class="form-group">
                 <label for="">Category</label>
                 <select  class="form-control" name='category_id'>
@@ -46,10 +36,7 @@
                 <?php } ?>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="">slug</label>
-                <input type="text" class="form-control" id="" placeholder="" name="slug"  value=" <?php echo($post['slug']) ?> " >
-            </div>
+         
            
             <button type="submit" class="btn btn-primary" name="submit">Update</button>
         </form>

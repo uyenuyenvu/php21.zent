@@ -30,7 +30,7 @@
 						<a href="?mod=user&act=detail&id=<?= $value['id']?>" class="btn btn-secondary"><i class="fa fa-eye"></i></a> 
 						<?php if ($value['stt']==1) {
 						?>
-							<a href="?mod=user&act=unapproved&id=<?= $value['id']?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+							<a href="?mod=user&act=unapproved&id=<?= $value['id']?>" class="btn btn-danger"><i class="fa fa-user-times"></i></a>
 						<?php
 						}else{ ?>
 						
